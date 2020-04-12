@@ -15,14 +15,16 @@ class Usuario {
    
     constructor(handle) {
         this.#handle = handle
-  
         this.#id = uuidv4()
     }
+    
     seguir = usuario => {
         if (!this.#siguiendo.includes(usuario) && usuario !== this.#handle) {
             this.#siguiendo.push(usuario)
         }
     }
 
+    obtenerHandle = () => this.#handle
+    obtenerIdUsuario = () => this.#id
     obtenerListaSiguiendo = () => this.#siguiendo
-}
+} 
